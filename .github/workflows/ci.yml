@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '21'
+          distribution: 'temurin' # Specify the Java distribution
 
       - name: Build with Gradle
         run: ./gradlew build
@@ -37,3 +38,4 @@ jobs:
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
           docker tag sew_styles_backend otizaaa/sew_styles_backend:latest
           docker push otizaaa/sew_styles_backend:latest
+
