@@ -23,12 +23,13 @@ services:
     container_name: sew_styles_backend
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/sew_styles
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: userpassword
+      SPRING_DATASOURCE_USERNAME: steve
+      SPRING_DATASOURCE_PASSWORD: Steve@123
     ports:
       - "5200:8080"
     depends_on:
       - mysql
+    entrypoint: ["./wait-for-mysql.sh", "java", "-jar", "/app.jar"]
     networks:
       - sew_styles_network
 
@@ -39,3 +40,4 @@ networks:
 volumes:
   mysql_data:
     driver: local
+
