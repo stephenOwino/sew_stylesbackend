@@ -1,0 +1,65 @@
+2024-11-25T00:57:37.422+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] c.s.s.SewStylesbackendApplicationTests   : Starting SewStylesbackendApplicationTests using Java 21 with PID 10799 (started by stephen in /home/stephen/Desktop/TOUCH AND YOU ARE DEAD/sew_stylesbackend)
+2024-11-25T00:57:37.426+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] c.s.s.SewStylesbackendApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-11-25T00:57:39.886+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-25T00:57:39.937+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JPA repository interfaces.
+2024-11-25T00:57:41.539+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-25T00:57:41.640+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-25T00:57:41.725+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-25T00:57:42.459+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-25T00:57:42.717+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-25T00:57:53.872+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40a8a26f
+2024-11-25T00:57:53.889+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-25T00:57:56.265+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-25T00:57:56.281+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25T00:57:56.790+03:00  WARN 10799 --- [sew_stylesbackend] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-25T00:57:58.909+03:00  INFO 10799 --- [sew_stylesbackend] [Test worker] c.s.s.SewStylesbackendApplicationTests   : Started SewStylesbackendApplicationTests in 22.818 seconds (process running for 28.838)
+2024-11-25T00:58:00.930+03:00  INFO 10799 --- [sew_stylesbackend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25T00:58:00.934+03:00  INFO 10799 --- [sew_stylesbackend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-25T00:58:00.952+03:00  INFO 10799 --- [sew_stylesbackend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-25T01:00:04.325+03:00  INFO 10995 --- [sew_stylesbackend] [restartedMain] c.s.s.SewStylesbackendApplication        : Starting SewStylesbackendApplication using Java 21 with PID 10995 (/home/stephen/Desktop/TOUCH AND YOU ARE DEAD/sew_stylesbackend/build/classes/java/main started by stephen in /home/stephen/Desktop/TOUCH AND YOU ARE DEAD/sew_stylesbackend)
+2024-11-25T01:00:04.332+03:00  INFO 10995 --- [sew_stylesbackend] [restartedMain] c.s.s.SewStylesbackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-11-25T01:00:04.500+03:00  INFO 10995 --- [sew_stylesbackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-25T01:00:04.501+03:00  INFO 10995 --- [sew_stylesbackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-25T01:00:04.633+03:00  INFO 10995 --- [sew_stylesbackend] [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/stephen/Desktop/TOUCH AND YOU ARE DEAD/sew_stylesbackend/compose.yaml'
+2024-11-25T01:00:36.111+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Network sew_stylesbackend_default  Creating
+2024-11-25T01:00:40.504+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Network sew_stylesbackend_default  Created
+2024-11-25T01:00:40.504+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container sew_stylesbackend-mysql-1  Creating
+2024-11-25T01:00:57.945+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container sew_stylesbackend-mysql-1  Created
+2024-11-25T01:00:57.948+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container sew_stylesbackend-mysql-1  Starting
+2024-11-25T01:01:52.019+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container sew_stylesbackend-mysql-1  Started
+2024-11-25T01:01:52.020+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container sew_stylesbackend-mysql-1  Waiting
+2024-11-25T01:01:52.789+03:00  INFO 10995 --- [sew_stylesbackend] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container sew_stylesbackend-mysql-1  Healthy
+2024-11-25T01:04:03.028+03:00 ERROR 10995 --- [sew_stylesbackend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.docker.compose.lifecycle.ReadinessTimeoutException: Readiness timeout of PT2M reached while waiting for services [sew_stylesbackend-mysql-1]
+	at org.springframework.boot.docker.compose.lifecycle.ServiceReadinessChecks.waitUntilReady(ServiceReadinessChecks.java:83) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.start(DockerComposeLifecycleManager.java:141) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:53) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:35) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185) ~[spring-context-6.1.15.jar:6.1.15]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.1.15.jar:6.1.15]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156) ~[spring-context-6.1.15.jar:6.1.15]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) ~[spring-context-6.1.15.jar:6.1.15]
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.context.event.EventPublishingRunListener.contextLoaded(EventPublishingRunListener.java:98) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$contextLoaded$4(SpringApplicationRunListeners.java:72) ~[spring-boot-3.3.6.jar:3.3.6]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.SpringApplicationRunListeners.contextLoaded(SpringApplicationRunListeners.java:72) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:433) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.6.jar:3.3.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.6.jar:3.3.6]
+	at com.stephenowino.sew_stylesbackend.SewStylesbackendApplication.main(SewStylesbackendApplication.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.6.jar:3.3.6]
+	Suppressed: org.springframework.boot.docker.compose.lifecycle.ServiceNotReadyException: Immediate disconnect while connecting to port 32768
+		at org.springframework.boot.docker.compose.lifecycle.TcpConnectServiceReadinessCheck.check(TcpConnectServiceReadinessCheck.java:71) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+		at org.springframework.boot.docker.compose.lifecycle.TcpConnectServiceReadinessCheck.check(TcpConnectServiceReadinessCheck.java:58) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+		at org.springframework.boot.docker.compose.lifecycle.TcpConnectServiceReadinessCheck.check(TcpConnectServiceReadinessCheck.java:48) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+		at org.springframework.boot.docker.compose.lifecycle.ServiceReadinessChecks.check(ServiceReadinessChecks.java:97) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+		at org.springframework.boot.docker.compose.lifecycle.ServiceReadinessChecks.waitUntilReady(ServiceReadinessChecks.java:77) ~[spring-boot-docker-compose-3.3.6.jar:3.3.6]
+		... 22 common frames omitted
+

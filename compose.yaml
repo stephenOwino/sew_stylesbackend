@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: sew_styles_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: sew_styles
+      MYSQL_USER: user
+      MYSQL_PASSWORD: Steve@123
+    ports:
+      - "3306:3306"
+    networks:
+      - sew_styles_network
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  sew_styles_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sew_styles_backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/sew_styles
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: userpassword
+    ports:
+      - "5200:8080"
+    depends_on:
+      - mysql
+    networks:
+      - sew_styles_network
+
+networks:
+  sew_styles_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
