@@ -6,6 +6,6 @@ public class Tailor {
         private String lastName;
         private String password;
         private String confirmPassword;
-        
+
 
 }

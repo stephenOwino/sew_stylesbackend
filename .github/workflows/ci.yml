@@ -15,32 +15,54 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Set up JDK 21 with Temurin (specify the Java version)
       - name: Set up JDK 21 with Temurin
         uses: actions/setup-java@v3
         with:
-          java-version: '21'            # Specify the Java version
-          distribution: 'temurin'       # Specify the JDK distribution (Temurin)
+          java-version: '21'
+          distribution: 'temurin'
 
+      # Build the project with Gradle (use your build tool of choice)
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Build Docker Image
-        run: docker build -t sew_styles_backend .
-
+      # Verify Docker Installation (check if Docker is available)
       - name: Verify Docker Installation
-        run: docker --version  # Verify Docker is installed and accessible
+        run: docker --version
 
+      # Build Docker Image (build your image from the Dockerfile)
+      - name: Build Docker Image
+        run: |
+          docker build -t sew_styles_backend .
+          docker images
+
+      # Debug Docker Secrets and login to DockerHub
+      - name: Debug Docker Secrets
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          echo "Using Docker username: $DOCKER_USERNAME"
+          echo "Docker password is set: $DOCKER_PASSWORD"  # Debugging output, but don't expose password
+
+      # Push Docker Image to DockerHub
       - name: Push Docker Image to DockerHub
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          echo "Username: $DOCKER_USERNAME"  # Ensure username is correct
+          # Log in to DockerHub
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          
+          # Tag the Docker image with your DockerHub username
           docker tag sew_styles_backend otizaaa/sew_styles_backend:latest
+          
+          # Push the image to DockerHub
           docker push otizaaa/sew_styles_backend:latest
+
 
 

@@ -5,7 +5,7 @@ services:
     image: mysql:8.0
     container_name: sew_styles_mysql
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: sew_styles
       MYSQL_USER: user
       MYSQL_PASSWORD: Steve@123
