@@ -1,13 +1,13 @@
-name: Java CI
+name: Java CI with Docker
 
 on:
   push:
     branches:
-      - main
-      - steve
+      - main      # Trigger CI/CD on push to main branch
+      - steve     # Or any other branch you want to trigger on
   pull_request:
     branches:
-      - main
+      - main      # Trigger on pull request to main branch
       - steve
 
 jobs:
@@ -26,9 +26,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      # Build the project with Gradle (use your build tool of choice)
+      # Build the project with Gradle (or Maven if you're using Maven)
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build  # Adjust if you are using Maven
 
       # Verify Docker Installation (check if Docker is available)
       - name: Verify Docker Installation
@@ -40,29 +40,37 @@ jobs:
           docker build -t sew_styles_backend .
           docker images
 
-      # Debug Docker Secrets and login to DockerHub
-      - name: Debug Docker Secrets
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-          echo "Using Docker username: $DOCKER_USERNAME"
-          echo "Docker password is set: $DOCKER_PASSWORD"  # Debugging output, but don't expose password
+      # Log in to DockerHub (ensure you have DockerHub secrets configured in GitHub)
+      - name: DockerHub Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}  # Add DockerHub username as a GitHub secret
+          password: ${{ secrets.DOCKER_PASSWORD }}  # Add DockerHub password as a GitHub secret
 
-      # Push Docker Image to DockerHub
+      # Tag and Push Docker Image to DockerHub
       - name: Push Docker Image to DockerHub
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          # Log in to DockerHub
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          
-          # Tag the Docker image with your DockerHub username
           docker tag sew_styles_backend otizaaa/sew_styles_backend:latest
-          
-          # Push the image to DockerHub
           docker push otizaaa/sew_styles_backend:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build  # Ensure this job runs only after the build job completes
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH (if deploying to a remote server via SSH)
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}  # Add your private key to GitHub secrets
+
+      - name: Deploy Docker container to remote server
+        run: |
+          ssh -o StrictHostKeyChecking=no user@remote-server-ip "docker pull otizaaa/sew_styles_backend:latest"
+          ssh -o StrictHostKeyChecking=no user@remote-server-ip "docker-compose -f /path/to/docker-compose.yml up -d"
+
 
 
 

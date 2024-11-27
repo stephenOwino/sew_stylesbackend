@@ -5,16 +5,24 @@ services:
     image: mysql:8.0
     container_name: sew_styles_mysql
     environment:
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_DATABASE: sew_styles
-      MYSQL_USER: user
-      MYSQL_PASSWORD: Steve@123
+      MYSQL_ROOT_PASSWORD: Steve@123  # Set your root password
+      MYSQL_DATABASE: sew_styles      # The name of the database to create
+      MYSQL_USER: Steve                # Ensure this matches the Spring Boot username
+      MYSQL_PASSWORD: Steve@123        # Password for non-root user
     ports:
-      - "3306:3306"
+      - "3307:3306"                    # Exposing MySQL on port 3307 on the host (3306 inside the container)
     networks:
       - sew_styles_network
     volumes:
       - mysql_data:/var/lib/mysql
+    command: --bind-address=0.0.0.0    # Ensure MySQL binds to all interfaces
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      retries: 3
+      start_period: 30s
+      timeout: 10s
 
   sew_styles_backend:
     build:
@@ -22,16 +30,19 @@ services:
       dockerfile: Dockerfile
     container_name: sew_styles_backend
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/sew_styles
-      SPRING_DATASOURCE_USERNAME: steve
+      SPRING_DATASOURCE_URL: jdbc:mysql://sew_styles_mysql:3306/sew_styles?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: Steve    # Use the non-root MySQL user
       SPRING_DATASOURCE_PASSWORD: Steve@123
     ports:
-      - "5200:8080"
+      - "5200:8080"  # Expose Spring Boot on port 5200
     depends_on:
-      - mysql
-    entrypoint: ["./wait-for-mysql.sh", "java", "-jar", "/app.jar"]
+      mysql:
+        condition: service_healthy  # Wait for MySQL to be healthy
     networks:
       - sew_styles_network
+    volumes:
+      - ./logs:/app/Logs  # Mount the host machine's logs directory to the container's /app/Logs directory
+    restart: always
 
 networks:
   sew_styles_network:
