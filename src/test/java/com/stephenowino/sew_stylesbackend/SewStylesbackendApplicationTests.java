@@ -22,7 +22,6 @@ class SewStylesbackendApplicationTests {
 	private UserRepository userRepository;
 
 	private User user;
-
 	private RegistrationRequest registrationRequest;
 
 	@BeforeEach

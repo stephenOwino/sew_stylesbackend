@@ -38,12 +38,20 @@ public class UserService {
                         throw new RuntimeException("User with email " + request.email() + " already exists");
                 }
 
+                // Ensure the role passed in the request is valid
+                Role role;
+                try {
+                        role = Role.valueOf(request.role().toUpperCase());  // Enforces case-insensitive role matching
+                } catch (IllegalArgumentException e) {
+                        throw new RuntimeException("Invalid role: " + request.role());
+                }
+
                 var newUser = User.builder()
                         .firstName(request.firstName())
                         .lastName(request.lastName())
                         .email(request.email())
                         .password(passwordEncoder.encode(request.password()))
-                        .role(Role.valueOf(request.role()))
+                        .role(role)
                         .image(request.image())
                         .isActive(request.isActive())
                         .build();
@@ -89,7 +97,6 @@ public class UserService {
                 return "Valid";
         }
 }
-
 
 
 
