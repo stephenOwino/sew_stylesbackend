@@ -1,9 +1,11 @@
 package com.stephenowino.sew_stylesbackend.Model;
 
-
 import com.stephenowino.sew_stylesbackend.Role.Role;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -31,5 +33,9 @@ public class User {
         private Role role; // Differentiates between USER and TAILOR
 
         private boolean isActive; // For enabling/disabling accounts
-}
 
+        // Add this getter method for isActive
+        public boolean isEnabled() {
+                return isActive;
+        }
+}

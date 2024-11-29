@@ -15,9 +15,9 @@ public class TailorController {
                 this.tailorService = tailorService;
         }
 
-        @PostMapping
-        public ResponseEntity<String> createTailorProfile(@RequestBody Tailor tailor) {
-                tailorService.createTailorProfile(tailor);
+        @PostMapping("/{userId}")
+        public ResponseEntity<String> createTailorProfile(@PathVariable Long userId, @RequestBody Tailor tailorDetails) {
+                tailorService.createTailorProfile(userId, tailorDetails);
                 return ResponseEntity.ok("Tailor profile created successfully!");
         }
 
@@ -26,4 +26,5 @@ public class TailorController {
                 return ResponseEntity.ok(tailorService.getTailorProfile(id));
         }
 }
+
 

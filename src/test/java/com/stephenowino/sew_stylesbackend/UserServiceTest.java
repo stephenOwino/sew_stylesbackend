@@ -6,6 +6,7 @@ import com.stephenowino.sew_stylesbackend.services.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
+
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,17 +22,25 @@ class UserServiceTest {
 
         @BeforeEach
         void setUp() {
-                MockitoAnnotations.openMocks(this);
-                user = User.builder().firstName("John").lastName("Doe").email("john.doe@example.com").password("password123").isTailor(false).build();
+                MockitoAnnotations.openMocks(this); // Initialize mocks
+                user = User.builder()
+                        .firstName("John")
+                        .lastName("Doe")
+                        .email("john.doe@example.com")
+                        .password("password123")
+                        .isActive(true) // Adjust based on your User class
+                        .build();
         }
 
         @Test
         void testRegisterUser() {
                 when(userRepository.save(any(User.class))).thenReturn(user);
 
-                userService.registerUser(user);
+                User registeredUser = userService.registerUser(user);
 
-                verify(userRepository, times(1)).save(user);
+                assertNotNull(registeredUser);
+                assertEquals("John", registeredUser.getFirstName());
+                verify(userRepository, times(1)).save(any(User.class));
         }
 
         @Test
@@ -42,6 +51,8 @@ class UserServiceTest {
 
                 assertNotNull(foundUser);
                 assertEquals("John", foundUser.getFirstName());
+                verify(userRepository, times(1)).findById(1L);
         }
 }
+
 
