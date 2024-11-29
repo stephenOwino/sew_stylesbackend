@@ -1,9 +1,11 @@
 package com.stephenowino.sew_stylesbackend;
 
+import lombok.Builder;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+@Builder
 public record RegistrationRequest(
         @NotBlank(message = "First name is required")
         String firstName,
@@ -24,7 +26,9 @@ public record RegistrationRequest(
 
         byte[] image, // Optional, no validation required
 
-        boolean isActive // Default should be set in the service
+        Boolean isActive // Nullable Boolean
 ) {
+        // You don't need a constructor here
 }
+
 
