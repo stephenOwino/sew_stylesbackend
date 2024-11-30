@@ -34,6 +34,9 @@ public class User {
 
         private boolean isActive; // For enabling/disabling accounts
 
+        public User(String john, String doe, String mail, String password123, Role role, byte[] bytes, boolean b) {
+        }
+
         // Add this getter method for isActive
         public boolean isEnabled() {
                 return isActive;
