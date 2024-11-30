@@ -89,3 +89,29 @@ Caused by: java.sql.SQLException: Access denied for user 'Steve'@'172.18.0.2' (u
 2024-11-30T10:25:03.212Z  WARN 1 --- [sew_stylesbackend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2024-11-30T10:25:05.880Z  INFO 1 --- [sew_stylesbackend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5200 (http) with context path '/'
 2024-11-30T10:25:06.167Z  INFO 1 --- [sew_stylesbackend] [main] c.s.s.SewStylesbackendApplication        : Started SewStylesbackendApplication in 55.066 seconds (process running for 83.172)
+2024-11-30T19:42:53.715Z  INFO 1 --- [sew_stylesbackend] [main] c.s.s.SewStylesbackendApplication        : Starting SewStylesbackendApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 1 (/app/app.jar started by root in /app)
+2024-11-30T19:42:53.748Z  INFO 1 --- [sew_stylesbackend] [main] c.s.s.SewStylesbackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-11-30T19:42:58.496Z  INFO 1 --- [sew_stylesbackend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-30T19:42:58.584Z  INFO 1 --- [sew_stylesbackend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 0 JPA repository interfaces.
+2024-11-30T19:43:01.251Z  INFO 1 --- [sew_stylesbackend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5200 (http)
+2024-11-30T19:43:01.376Z  INFO 1 --- [sew_stylesbackend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-30T19:43:01.378Z  INFO 1 --- [sew_stylesbackend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-30T19:43:01.772Z  INFO 1 --- [sew_stylesbackend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-30T19:43:01.773Z  INFO 1 --- [sew_stylesbackend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7584 ms
+2024-11-30T19:43:02.449Z  INFO 1 --- [sew_stylesbackend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-30T19:43:02.741Z  INFO 1 --- [sew_stylesbackend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-30T19:43:03.003Z  INFO 1 --- [sew_stylesbackend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-30T19:43:04.285Z  INFO 1 --- [sew_stylesbackend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-30T19:43:04.590Z  INFO 1 --- [sew_stylesbackend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-30T19:43:07.275Z  INFO 1 --- [sew_stylesbackend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b94703b
+2024-11-30T19:43:07.282Z  INFO 1 --- [sew_stylesbackend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-30T19:43:07.911Z  WARN 1 --- [sew_stylesbackend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-30T19:43:07.916Z  WARN 1 --- [sew_stylesbackend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-11-30T19:43:09.085Z  INFO 1 --- [sew_stylesbackend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-30T19:43:09.098Z  INFO 1 --- [sew_stylesbackend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-30T19:43:09.284Z  WARN 1 --- [sew_stylesbackend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-30T19:43:10.469Z  INFO 1 --- [sew_stylesbackend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5200 (http) with context path '/'
+2024-11-30T19:43:10.608Z  INFO 1 --- [sew_stylesbackend] [main] c.s.s.SewStylesbackendApplication        : Started SewStylesbackendApplication in 19.263 seconds (process running for 25.743)
+2024-11-30T19:51:03.607Z  INFO 1 --- [sew_stylesbackend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-30T19:51:03.668Z  INFO 1 --- [sew_stylesbackend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-30T19:51:03.748Z  INFO 1 --- [sew_stylesbackend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

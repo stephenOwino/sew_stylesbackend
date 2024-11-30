@@ -1,5 +1,5 @@
-# Use Java 21 base image
-FROM eclipse-temurin:21-jdk-jammy
+# Use Java 17 base image
+FROM eclipse-temurin:17-jdk-jammy
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -12,5 +12,3 @@ EXPOSE 5200
 
 # Set the command to directly start the Java application
 CMD ["java", "-jar", "app.jar"]
-
-
